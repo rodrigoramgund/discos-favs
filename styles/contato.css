@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #050008;
+    --cor-secundaria: #e8dfff; 
+    --cor-terciaria: #9E93FC;
+    --cor-cabecalho-hover: #D487FE;
+    --cor-links-hover: #514c81;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-primaria);
+    /* height: 100vh; */
+    box-sizing: border-box; /* faz o elemento filho nao sair do pai */
+}
+
+.cabecalho {
+    padding: 4% 0%;
+    background-color: var(--cor-terciaria);
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+.cabecalho__menu__link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--fonte-secundaria);
+    transition: 0.7s color;
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-links-hover);
+    text-decoration: underline;
+}
+
+main {
+    color: var(--cor-secundaria);
+}
+
+.apresentacao {
+    display: flex; /* esse elemento se torna um flex container, a partir daí podemos manipular todos os elementos filhos desse flex container com propriedades novas. Essas propriedades devem ser usadas no elemento que é um flex container. */
+    align-items: center; /* os itens são centralizados no meio */
+    justify-content: space-between; /* os itens são distribuídos uniformemente na linha; primeiro item está na linha de partida, último item na linha final */
+    padding: 5% 9%;
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column; /* ordena os conteudos em colunas verticalmente */
+    gap: 50px; /* espaçamento entre os conteudos */
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /* 1rem = 16px */
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    /* margin-top: 40px; */
+}
+.apresentacao__conteudo__texto a {
+    text-decoration: none;
+    color: var(--cor-terciaria);
+    transition: 0.6s color;
+}
+.apresentacao__conteudo__texto a:hover {
+    text-decoration: none;
+    color: var(--cor-cabecalho-hover);
+    text-decoration: underline;
+}
+
+.destaque-titulo {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__links {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.apresentacao__links__link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background-color: var(--cor-primaria);
+    width: 50%;
+    border: 2px solid var(--cor-terciaria);
+    border-radius: 16px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-weight: 600; /* peso da fonte do google fonts */
+    font-size: 1.5rem;
+    color: var(--cor-secundaria);
+    text-decoration: none; /* tirar sublinhado do link */
+    padding: 21px 0;
+    /* margin-top: 51px; */
+    transition: background-color 160ms;
+}
+.apresentacao__links__link:hover {
+    background-color: var(--cor-links-hover);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* .icones {
+    color: #9E93FC;
+} */
+
+.minha-foto {
+    border-radius: 75px;
+    width: 50%;
+    opacity: 82%;
+    transition: 800ms;
+    width: 40%;
+}
+.minha-foto:hover {
+    opacity: 60%;
+}
+.rodape {
+    background-color: var(--cor-terciaria);;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    text-align: center;
+    padding: 24px 0;
+}
+
+@media (max-width: 1200px) /* telas menores que essa largura aplica o @media */ {
+    .cabecalho {
+        padding: 5%;
+        width: 90%;
+    }
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse;
+        padding: 5%;
+        width: 90%;
+    }
+    .apresentacao__conteudo {
+        width: auto;
+        justify-content: center;
+    }
+
+    .apresentacao__links__link {
+        font-size: 1.25rem;
+    }
+    
+    .minha-foto {
+        width: 245px;
+    }
+}

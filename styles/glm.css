@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #1C3FA6;
+    --cor-secundaria: #FFFFFF; 
+    --cor-terciaria: #d9bd68;
+    --cor-links-hover: #514c81;
+
+    --fonte-primaria: 'Krona One', sans-serif;
+    --fonte-secundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--cor-primaria);
+    /* height: 100vh; */
+    box-sizing: border-box; /* faz o elemento filho nao sair do pai */
+    width: 100%;
+    /* text-shadow: 0.15em 0.1em 0.5em rgb(3 3 3 / 35%) */
+}
+
+.cabecalho {
+    padding: 4% 0%;
+    background-color: var(--cor-terciaria);
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+.cabecalho__menu__link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--fonte-secundaria);
+    transition: 0.7s color;
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-links-hover);
+    text-decoration: underline;
+}
+
+main {
+    color: var(--cor-secundaria);
+    width: 100%;
+}
+
+.apresentacao {
+    display: flex; /* esse elemento se torna um flex container, a partir daí podemos manipular todos os elementos filhos desse flex container com propriedades novas. Essas propriedades devem ser usadas no elemento que é um flex container. */
+    flex-wrap: wrap;
+    /* padding: 3% 9%; */
+}
+
+.apresentacao__conteudo {
+    width: 100%;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    flex-direction: column; /* ordena os conteudos em colunas verticalmente */
+    gap: 35px; /* espaçamento entre os conteudos */
+    text-align: center;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+    color: var(--cor-terciaria);
+    text-align: center;
+}
+
+.apresentacao__conteudo__subtitulo {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    /* margin-top: 40px; */
+}
+
+.apresentacao__discografia {
+    display: flex;
+    padding: 3% 8% 9%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* align-content: space-evenly; */
+    gap: 75px;
+}
+
+.apresentacao__discografia__discos {
+    text-align: center;
+    transition: 1s;
+}
+.apresentacao__discografia__discos:hover {
+    text-decoration: underline;
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__discografia__discos__titulo {
+    font-size: 1.03rem;
+    font-family: var(--fonte-secundaria);
+    padding-bottom: 3%;
+}
+
+.apresentacao__discografia__discos__img {
+    transition: 800ms;
+    opacity: 100%;
+}
+.apresentacao__discografia__discos__img:hover {
+    opacity: 50%;
+}
+
+.apresentacao__disco {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: flex-start; */
+    flex-direction: column;
+    align-items: center;
+    width: 91%;
+}
+.apresentacao__lista {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+    padding: 2% 2% 5% 2%;
+    align-items: center;
+}
+
+.apresentacao__lista__musicas {
+    flex-direction: column;
+    align-items: center;
+}
+
+.apresentacao__lista__banner {
+    transition: 800ms;
+    opacity: 100%;
+    box-shadow: 2px 2px 11px 0px rgb(50 50 50 / 38%)
+}
+.apresentacao__lista__banner:hover {
+    opacity: 50%;
+}
+
+.video {
+    margin-bottom: 3em;
+    flex-direction: column;
+    width: 40%;
+    box-shadow: 2px 2px 11px 0px rgb(50 50 50 / 38%)
+}
+
+.rodape {
+    background-color: var(--cor-terciaria);;
+    color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    text-align: center;
+    padding: 24px 0;
+}
+
+@media (max-width: 804px) {
+    body {
+        width: auto;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    .cabecalho__menu__link {
+        font-size: 1.25em;
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.5rem;
+    }
+
+    .apresentacao__conteudo__subtitulo {
+        font-size: 1rem;
+    }
+
+    .apresentacao__discografia {
+        /* flex-direction: column; */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1272px) {
+    .apresentacao__lista {
+        flex-direction: column;
+        text-align: center;
+        font-size: 1.25em;
+        width: 90%;
+        align-items: center;
+    }
+    .apresentacao__lista__banner, .video {
+        width: 90%;
+    }
+}
